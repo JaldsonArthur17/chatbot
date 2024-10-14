@@ -11,36 +11,10 @@ const startupSound = new Audio('iniciar.mp3'); // Som ao iniciar
 const sendSound = new Audio('receber.mp3'); // Som ao enviar
 const receiveSound = new Audio('enviar.mp3'); // Som ao receber
 
-// Reproduzir som de início e mostrar a tela de carregamento
+// Reproduzir som de início ao carregar a página
 window.onload = () => {
     startupSound.play(); // Toca o som de início
-    showLoadingScreen();
 };
-
-// Função para mostrar a tela de carregamento
-function showLoadingScreen() {
-    const loadingScreen = document.createElement('div');
-    loadingScreen.classList.add('loading-screen');
-    
-    const loadingCircle = document.createElement('div');
-    loadingCircle.classList.add('circle'); // Círculo brilhante
-    loadingCircle.style.animation = 'glow 1s infinite'; // Adiciona a animação de brilho
-
-    loadingScreen.appendChild(loadingCircle);
-    document.body.appendChild(loadingScreen);
-
-    setTimeout(() => {
-        document.body.removeChild(loadingScreen); // Remove a tela de carregamento após 3 segundos
-        showChat(); // Mostra a tela de chat após a remoção da tela de carregamento
-    }, 3000);
-}
-
-// Função para mostrar a tela de chat
-function showChat() {
-    document.body.style.backgroundColor = "#ff6868"; // Restaura a cor de fundo
-    header.style.display = "block"; // Exibe o cabeçalho
-    document.querySelector('.container').style.display = "flex"; // Exibe a caixa de chat
-}
 
 function sendMessage() {
     const userMessage = userInput.value.trim();
@@ -106,7 +80,7 @@ function generateResponse(userMessage) {
 function triggerCircleAnimation() {
     circle.classList.add('glow'); // Adiciona a classe de brilho
     setTimeout(() => {
-        circle.classList.remove('glow'); // Remove a classe após 2 segundos
+        circle.classList.remove('glow'); // Remove a classe após 1 segundo
     }, 2000); // Tempo total de 2 segundos
 }
 
