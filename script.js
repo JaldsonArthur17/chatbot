@@ -6,7 +6,6 @@ const circle = document.createElement('div');
 circle.classList.add('circle');
 header.appendChild(circle);
 
-const startupSound = new Audio('iniciar.mp3'); 
 const sendSound = new Audio('receber.mp3'); 
 const receiveSound = new Audio('enviar.mp3'); 
 
