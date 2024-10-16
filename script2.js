@@ -1,11 +1,26 @@
-// Esperar o carregamento completo da página antes de reproduzir o som
 window.onload = () => {
-    // Reproduzir som de início
-    const startupSound = new Audio('iniciar.mp3'); // Som ao iniciar
-    startupSound.play();
+    const startBtn = document.getElementById('startBtn');
+    const circle = document.getElementById('loadingCircle');
+    const loadingText = document.getElementById('loadingText');
+    
+    if (!startBtn) {
+        console.error('Botão "Iniciar" não encontrado!');
+        return; 
+    }
+    startBtn.addEventListener('click', () => {
+    
+        startBtn.style.display = 'none';
 
-    // Redirecionar após 3 segundos para a tela de chat
-    setTimeout(() => {
-        window.location.href = 'index.html'; // Redireciona para a tela de chat
-    }, 3000);
+        const startupSound = new Audio('iniciar.mp3'); 
+        startupSound.play();
+
+        circle.style.display = 'block';
+        circle.style.animation = 'glow 1.5s infinite alternate';
+
+        loadingText.style.display = 'block';
+
+        setTimeout(() => {
+            window.location.href = 'index.html'; 
+        }, 6000);  
+    });
 };
