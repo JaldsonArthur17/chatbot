@@ -34,9 +34,9 @@ body {
     border: 4px solid white; 
     border-radius: 50%;
     position: absolute;
-    top: 20%; /* Centraliza verticalmente */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta para centralização perfeita */
+    top: 20%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
     box-shadow: 0 0 10px rgb(255, 255, 255);
     animation: spin 2s linear infinite; 
 }
@@ -96,9 +96,9 @@ body {
     margin: 10px 0;
     display: flex;
     align-items: center;
-    opacity: 0; /* Para animação de entrada */
-    transform: translateY(10px); /* Para animação de entrada */
-    animation: fadeIn 0.3s forwards; /* Chama a animação */
+    opacity: 0; 
+    transform: translateY(10px); 
+    animation: fadeIn 0.3s forwards; 
 }
 
 @keyframes fadeIn {
@@ -133,7 +133,7 @@ body {
 }
 
 .glow {
-    animation: glow 1s forwards, glowBack 1s 1s forwards; /* Aumenta o brilho e depois retorna */
+    animation: glow 1s forwards, glowBack 1s 1s forwards; 
 }
 
 @keyframes glow {
@@ -141,18 +141,42 @@ body {
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     }
     50% {
-        box-shadow: 0 0 30px rgba(255, 255, 255, 1); /* Brilho máximo */
+        box-shadow: 0 0 30px rgba(255, 255, 255, 1); 
     }
     100% {
-        box-shadow: 0 0 30px rgba(255, 255, 255, 1); /* Mantém o brilho máximo até a transição */
+        box-shadow: 0 0 30px rgba(255, 255, 255, 1); 
     }
 }
 
 @keyframes glowBack {
     0% {
-        box-shadow: 0 0 30px rgba(255, 255, 255, 1); /* Mantém o brilho máximo */
+        box-shadow: 0 0 30px rgba(255, 255, 255, 1); 
     }
     100% {
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Retorna ao estado original */
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
     }
 }
+
+.backBtn {
+    position: absolute;
+    bottom: 80px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #862626; 
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.backBtn:hover {
+    background-color: #6a1e1e; 
+    transform: translateX(-50%) scale(1.05);
+}
+.backBtn:active {
+    transform: translateX(-50%) scale(1);
+}
+
