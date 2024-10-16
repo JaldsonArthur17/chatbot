@@ -21,6 +21,6 @@ window.onload = () => {
 
         setTimeout(() => {
             window.location.href = 'index.html'; 
-        }, 6000);  
+        }, 4000);  
     });
 };
